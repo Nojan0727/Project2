@@ -5,19 +5,51 @@
     <title>Project2</title>
 </head>
 <body>
-<h1 id="Project">Welkom bij periode2</h1>
+<h1 id="Project">Welkom bij periode2-DOM</h1>
+
+<h2 id="heading2"> Live score board</h2>
+<div>
+    <div class="club-naam">Ajax
+    </div>
+    <div class="club-one-score" id="score-ajax">0</div>
+</div>
+<div class="club-naam">Feyenoord
+
+</div>
+<div class="club-one-score" id="score-feynoord">0</div>
+
+<button onclick="ajax_scoort()">Ajax scoort!</button>
+<button onclick="feynoord_scoort()">Feyenoord scoort!</button>
 <script>
+    
   function change_color_blue() {
     document.getElementById("Project").style.color = "blue";
   }
-  setTimeout(change_color_blue, 1000);
+  setInterval(change_color_blue, 200);
   function change_to_black() {
   document.getElementById("Project").style.color = "black";
   }
-  setInterval(change_to_black, 3000);
+  setInterval(change_to_black, 300);
+
+
+  let Ajax = 0;
+  let Feyenoord = 0;
+
+  function ajax_scoort(){
+      Ajax--;
+      Feyenoord++;
+      document.getElementById("score-ajax").innerText = Ajax;
+      document.getElementById("score-feynoord").innerText= Feyenoord;
+  }
+  function feynoord_scoort(){
+      Feyenoord++;
+      Ajax--;
+      document.getElementById("score-feynoord").innerText= Feyenoord;
+      document.getElementById("score-ajax").innerText = Ajax;
+  }
 
 
 </script>
-<button onclick="change_color_green()">Click me</button>
+
 </body>
 </html>
